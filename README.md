@@ -153,8 +153,13 @@ Para administrar un directorio telefónico sin claves duplicadas y ordenado por 
 
 ---
 
-### Ejercicio en Clase
+### Ejercicios en Clase
+
+**-- CAPTURA CLASE 1 --**
 
 ![alt text](image.png)
 
+**-- CAPTURA CLASE 2 --**
+
+![alt text](image-1.png)
 ---
