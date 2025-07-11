@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 import controllers.Ejercicios;
 import controllers.EmpleadoContoller;
 import controllers.EmpleadoDAO;
@@ -22,7 +24,10 @@ public class App {
         // runEjerccios();
 
         // Ejecuta los ejercicios con el DAO
-        runEmpleadoDAO();
+        //runEmpleadoDAO();
+
+        //Ejercicios propuestos
+        runEjerccios();
     }
 
     private static void runMapExamlpe() {
@@ -92,7 +97,39 @@ public class App {
     }
 
     private static void runEjerccios() {
-        throw new UnsupportedOperationException("Not implemented yet");
+        Ejercicios ejercicios = new Ejercicios();
 
+        System.out.println("\n---- Ejercicio 1 ----");
+        
+        System.out.println(">>> Palabras: listen, silent.");
+        System.out.println("¿Son anagramas? -> " + Ejercicios.areAnagrams("listen", "silent"));
+        System.out.println("\n>>> Palabras : hello, bello");
+        System.out.println("¿Son anagramas? -> " + Ejercicios.areAnagrams("hello", "bello"));
+
+        System.out.println("\n---- Ejercicio 2 ----");
+
+        int[] nums1 = {9, 2, 3, 6};
+        int objetivo1 = 5;
+        int[] resultado1 = ejercicios.sumatoriaDeDos(nums1, objetivo1);
+        System.out.println(">>> Numeros: [9,2,3,6] -> objetivo 5: ");
+        System.out.println("Posiciones: " + Arrays.toString(resultado1));
+
+        int[] nums2 = {9, 2, 3, 6};
+        int objetivo2 = 10;
+        int[] resultado2 = ejercicios.sumatoriaDeDos(nums2, objetivo2);
+        System.out.println("\n>>> Numeros: [9,2,3,6] -> objetivo 10: ");
+        System.out.println("Posiciones: " + Arrays.toString(resultado2));
+
+        System.out.println("\n---- Ejercicio 3 ----");
+
+        System.out.println("Palabra: hola");
+        System.out.println("Contador de caracteres : ");
+        ejercicios.contarCaracteres("hola");
+
+        System.out.println("\n---- Ejercicio 4 ----");
+        boolean resultadoAnagrama = ejercicios.sonAnagramas("roma", "amor");
+        System.out.println("Palabras: roma , amor.");
+        System.out.println("¿Son anagramas? -> " + resultadoAnagrama);
+        System.out.println();
     }
 }

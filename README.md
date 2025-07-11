@@ -162,4 +162,8 @@ Para administrar un directorio telefónico sin claves duplicadas y ordenado por 
 **-- CAPTURA CLASE 2 --**
 
 ![alt text](image-1.png)
+
+**-- CAPTURA EJERCICIOS --**
+
+![alt text](image-3.png)
 ---

@@ -1,6 +1,8 @@
 package controllers;
 
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 
 public class Ejercicios {
 
@@ -28,8 +30,14 @@ public class Ejercicios {
      * frecuencia.
      */
     public static boolean areAnagrams(String str1, String str2) {
-        throw new UnsupportedOperationException("Not implemented yet");
-
+        if (str1 == null || str2 == null || str1.length() != str2.length()) {
+            return false;
+        }
+        char[] arr1 = str1.toCharArray();
+        char[] arr2 = str2.toCharArray();
+        Arrays.sort(arr1);
+        Arrays.sort(arr2);
+        return Arrays.equals(arr1, arr2);
     }
 
     /*
@@ -48,7 +56,15 @@ public class Ejercicios {
      * Output: null
      */
     public int[] sumatoriaDeDos(int[] nums, int objetivo) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        HashMap<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < nums.length; i++) {
+            int complemento = objetivo - nums[i];
+            if (map.containsKey(complemento)) {
+                return new int[]{map.get(complemento), i};
+            }
+            map.put(nums[i], i);
+        }
+        return null;
     }
 
     /**
@@ -60,7 +76,11 @@ public class Ejercicios {
      * Output: {h=1, o=1, l=1, a=1}
      */
     public void contarCaracteres(String texto) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        LinkedHashMap<Character, Integer> frecuencia = new LinkedHashMap<>();
+        for (char c : texto.toCharArray()) {
+            frecuencia.put(c, frecuencia.getOrDefault(c, 0) + 1);
+        }
+        System.out.println(frecuencia);
     }
 
     /**
@@ -72,6 +92,6 @@ public class Ejercicios {
      * Output: true
      */
     public boolean sonAnagramas(String palabra1, String palabra2) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        return Ejercicios.areAnagrams(palabra1, palabra2);
     }
 }
